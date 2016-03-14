@@ -1,0 +1,9 @@
+postgres_db:
+  image: postgres
+  environment:
+    POSTGRES_PASSWORD: twitter
+    POSTGRES_USER: twitter_shmitter
+  volumes:
+    - ./sql/:/docker-entrypoint-initdb.d
+  ports:
+    - "5432:5432"
