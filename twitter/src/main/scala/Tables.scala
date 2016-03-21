@@ -1,9 +1,21 @@
-// TODO: that shit is crazy
-import slick.driver.H2Driver.api._
+import slick.driver.PostgresDriver.api._
 
-//import scala.concurrent.ExecutionContext.Implicits.global
+class Tweets(tag: Tag) extends Table[(Int, String, Int)](tag, "TWEETS") {
+  def tweetID = column[Int]("TWEET_ID", O.PrimaryKey)
+  def text    = column[String]("TEXT")
+  def shmitID = column[Int]("SHMIT_ID")
+  
+  def * = (tweetID, text, shmitID)
+  
+  // TODO: foreign key?
+}
 
-// TODO: define the tables for twitter-shmitter (tweets, shmits)
+
+// TODO: define the table from shmits
+
+
+
+// bloody example
 class Coffees(tag: Tag) extends Table[(String, Int, Double, Int, Int)](tag, "COFFEES") {
   def name = column[String]("COF_NAME", O.PrimaryKey) // :D
   def supID = column[Int]("SUP_ID")
