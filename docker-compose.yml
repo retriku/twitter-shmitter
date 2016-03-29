@@ -1,5 +1,6 @@
 postgres_db:
   image: postgres
+  container_name: twitter-shmitter
   environment:
     POSTGRES_PASSWORD: twitter
     POSTGRES_USER: twitter_shmitter

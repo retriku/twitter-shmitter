@@ -13,6 +13,7 @@ lazy val `twitter-shmitter` = (project in file("twitter"))
   .settings(
     libraryDependencies ++= Seq(
       h2,
+      hikaricp,
       slick,
       postgres
     ))
