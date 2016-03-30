@@ -5,16 +5,10 @@ lazy val commonSettings = Seq(
   libraryDependencies ++= Seq(
     scalaLogging,
     logback,
-    scalaTest
-  ))
+    scalaTest,
+    typesafeConfig
+  ),
+  scalacOptions ++= Seq("-feature", "-language:postfixOps"))
 
 lazy val `twitter-shmitter` = (project in file("twitter"))
   .settings(commonSettings: _*)
-  .settings(
-    libraryDependencies ++= Seq(
-      h2,
-      hikaricp,
-      slick,
-      postgres
-    ))
-

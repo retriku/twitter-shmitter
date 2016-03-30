@@ -14,4 +14,5 @@ object Dependencies {
   val scalaLogging = "com.typesafe.scala-logging" %% "scala-logging" % "3.1.0"
   val h2 = "com.h2database" % "h2" % "1.4.191" % "test"
   val postgres = "org.postgresql" % "postgresql" % "9.4.1208.jre7"
+  val typesafeConfig = "com.typesafe" % "config" % "1.3.0"
 }

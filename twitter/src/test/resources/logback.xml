@@ -1,0 +1,18 @@
+<configuration debug="true" scan="true" scanPeriod="10 seconds">
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--<pattern>%coloredLevel - %logger - %message%n%xException</pattern>-->
+            <!--<pattern>%d{HH:mm:ss.SSS} %coloredLevel %X{akkaSource} - %message%n%xException</pattern>-->
+            <pattern>%-150.-150(%X{akkaTimestamp} [%-5level] [%logger{10}] %X{akkaSource}) - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="slick" level="DEBUG"/>
+    <logger name="akka" level="OFF"/>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>
