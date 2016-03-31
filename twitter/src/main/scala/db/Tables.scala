@@ -1,8 +1,7 @@
 package db
 
-import java.sql.Date
-
 import db.components.DBComponent
+import domain.TwitterDomain.Tweet
 
 object Tables {
 
@@ -11,7 +10,7 @@ object Tables {
 
     import driver.api._
 
-    final class TweetTable(tag: Tag) extends Table[(Int, String, String, Date)](tag, "twitter_message") {
+    final class TweetTable(tag: Tag) extends Table[(Int, String, String, java.sql.Date)](tag, "twitter_message") {
 
       def id = column[Int]("id", O.AutoInc, O.PrimaryKey)
 
@@ -19,7 +18,7 @@ object Tables {
 
       def text = column[String]("text")
 
-      def createdDate = column[Date]("created_date")
+      def createdDate = column[java.sql.Date]("created_date")
 
       override def * = (id, user, text, createdDate)
     }

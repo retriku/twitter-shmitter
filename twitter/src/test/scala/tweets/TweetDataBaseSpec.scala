@@ -1,8 +1,9 @@
 package tweets
 
+import java.text.SimpleDateFormat
 import java.util.Date
 
-import db.Repository
+import db.SqlRepository
 import db.components.{H2DBComponent, PostgresDBComponent}
 import domain.TwitterDomain
 import org.scalatest.{Matchers, WordSpecLike}
@@ -25,7 +26,7 @@ class TweetDataBaseSpec extends WordSpecLike
 
   object TweetDataBase {
 
-    object TweetDataBaseRepository extends Repository with H2DBComponent {
+    object TweetDataBaseRepository extends SqlRepository with PostgresDBComponent {
 
       implicit val ec = ExecutionContext.global
     }
@@ -39,7 +40,9 @@ class TweetDataBaseSpec extends WordSpecLike
 
     val repo = TweetDataBaseRepository
 
-    val testTweet1 = Tweet(None, "user1", "tweet", new Date())
+    val dateFormat = new SimpleDateFormat("yyyy-MM-dd")
+
+    val testTweet1 = Tweet(None, "user1", "tweet", dateFormat.parse(dateFormat.format(new Date())))
   }
 
 }

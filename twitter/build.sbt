@@ -6,7 +6,10 @@ libraryDependencies ++= Seq(
   h2,
   hikaricp,
   slick,
-  postgres
+  postgres,
+  actor,
+  actorTestKit,
+  actorSlf4j
 )
 
 parallelExecution in Test := false

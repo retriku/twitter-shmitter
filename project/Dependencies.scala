@@ -5,7 +5,9 @@ object Dependencies {
   val akkaVersion = "2.4.2"
   val scalactic = "org.scalactic" %% "scalactic" % "2.2.6"
   val scalaTest = "org.scalatest" %% "scalatest" % "2.2.6" % "test"
-  val akka = "com.typesafe.akka" %% "akka-actor" % akkaVersion
+  val actor = "com.typesafe.akka" %% "akka-actor" % akkaVersion
+  val actorTestKit = "com.typesafe.akka" %% "akka-testkit" % akkaVersion
+  val actorSlf4j = "com.typesafe.akka" %% "akka-slf4j" % akkaVersion
   val slick = "com.typesafe.slick" %% "slick" % slickVersion
   val slickTestKit = "com.typesafe.slick" %% "slick-testkit" % slickVersion % "test"
   val hikaricp = "com.typesafe.slick" %% "slick-hikaricp" % slickVersion

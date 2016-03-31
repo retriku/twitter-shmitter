@@ -8,8 +8,8 @@
         </encoder>
     </appender>
 
-    <logger name="slick" level="DEBUG"/>
-    <logger name="akka" level="OFF"/>
+    <logger name="slick" level="OFF"/>
+    <logger name="akka" level="DEBUG"/>
 
     <root level="INFO">
         <appender-ref ref="STDOUT"/>
